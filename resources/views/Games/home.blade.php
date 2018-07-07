@@ -1,7 +1,8 @@
 <?php
 $games = [
     '0' => ['name' => 'Quiz', 'url' => 'quiz', 'image' => 'dummy.jpg'],
-    '1' => ['name' => 'Tic Tac Toe', 'url' => 'TTT', 'image' => 'dummy.jpg']
+    '1' => ['name' => 'Tic Tac Toe', 'url' => 'TTT', 'image' => 'dummy.jpg'],
+//    '2' => ['name' => 'Tic Tac Toe', 'url' => 'TTT', 'image' => 'dummy.jpg']
 ];
 
 ?>
@@ -31,11 +32,11 @@ $games = [
         <div class="col-md-8">
             <div class="row">
                 @forelse($games as $game)
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-lg-4 p-2">
                         <a href="/games/{{$game['url']}}/index">
-                            <div class="game-block text-center p-2 bg-dark" style="width: 240px;">
+                            <div class="game-block text-center p-2 bg-dark">
                                 <h4 class="text-danger">{{$game['name']}}</h4>
-                                <img src="{{url('images/game/'.$game['image'])}}" alt="image" height="200px" width="220px">
+                                <img src="{{url('images/game/'.$game['image'])}}" alt="image" style="width:100%;max-height:280px;">
                             </div>
                         </a>
                     </div>
@@ -45,9 +46,13 @@ $games = [
             </div>
         </div>
         <div class="col-md-4">
-
+            <a href="/login">
+                <div class="border p-3">
+                    <h3 class="text-success">Add new games every week!! Panel</h3>
+                    <img width="280px" src="{{url('images/logo.png')}}" alt="image">
+                </div>
+            </a>
         </div>
-
     </div>
 </div>
 
