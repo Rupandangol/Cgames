@@ -1,6 +1,10 @@
 {{--include css and js here--}}
 @section('css')
-
+    <style>
+        .bg-ttt {
+            background: rgba(150, 50, 150,0.2);
+        }
+    </style>
 @endsection
 
 @section('js')
@@ -10,10 +14,12 @@
 
 @include('includes.header')
 
-<div class="row" id="TTT">
+<div class="row" id="TTT" style="min-height: 350px;">
     <div class="col-md-8 order-md-2 text-center">
-        <h3>@{{test}}</h3>
-        <img src="{{url('images/game/dummy.jpg')}}" alt="image" width="100%">
+        <router-view class="bg-ttt">
+
+        </router-view>
+        {{--<img src="{{url('images/game/dummy.jpg')}}" alt="image" width="100%">--}}
     </div>
     <div class="col-md-2 order-md-1 text-center">
         <h1>1</h1>
