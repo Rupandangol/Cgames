@@ -2,7 +2,8 @@
 @section('css')
     <style>
         .bg-ttt {
-            background: rgba(150, 50, 150,0.2);
+            min-height: 520px;
+            background: rgba(250, 50, 150, 0.2);
         }
     </style>
 @endsection
