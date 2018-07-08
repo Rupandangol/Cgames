@@ -1,5 +1,5 @@
 <template>
-    <div style="min-height: 500px">
+    <div>
         <div class="row">
             <div class="col">
                 <br><br><br>
@@ -7,7 +7,11 @@
                 <h2>Tic Tac Toe</h2>
             </div>
         </div>
-        <button class="btn btn-info btn-lg">Play</button>
+        <br>
+        <router-link to="/play" class="btn btn-primary btn-lg">Play</router-link>
+        <br>
+        <br>
+        <router-link to="/score" class="btn btn-warning btn-lg">Scoreboard</router-link>
     </div>
 </template>
 

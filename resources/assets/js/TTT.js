@@ -20,7 +20,7 @@ const router = new VueRouter({
             component: TTThome
         },
         {
-            path: '/play/:id',
+            path: '/play',
             component: TTTplay
         },
         {

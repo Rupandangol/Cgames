@@ -8,18 +8,17 @@
     <title>Collaborate Games</title>
     <link rel="shortcut icon" type="image/png" href="{{URL::to('images/icon.png')}}">
     <link rel="stylesheet" href="{{url('css/app.css')}}">
-        <style>
+    <style>
         .bg-body {
-            background: rgba(150, 50, 150, 0.3);
-            {{--background: url("{{url('images/bg-logo.jpg')}}") fixed no-repeat center/cover;--}}
+            background: rgba(50, 50, 250, 0.3);
         }
 
         .bg-custom-container {
-            background: rgba(100, 200, 150, 0.3);
+            background: url("{{url('images/paper.jpg')}}") fixed no-repeat center/cover;
         }
 
         .bg-header {
-            background: linear-gradient(to right ,transparent,lightgray,lightgrey,lightgrey, transparent);
+            background: linear-gradient(to right, transparent, lightgray, lightgrey, lightgrey, transparent);
         }
 
         .logo-image {
