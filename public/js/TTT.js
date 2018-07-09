@@ -14730,7 +14730,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -15003,6 +15003,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -15013,13 +15019,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 c1: '.', c2: '.', c3: '.'
             },
             player: {
+                name1: 'Player 1',
                 score1: 0,
+                name2: 'Player 2',
                 score2: 0
             }
         };
     },
 
-    methods: {}
+    methods: {
+        tdClick: function tdClick(value) {
+            var tableval = value;
+            if (tableval === 'a1') this.table.a1 = 'x';
+        }
+    }
 });
 
 /***/ }),
@@ -15035,40 +15048,165 @@ var render = function() {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
-    _c("div", { staticClass: "game-table m-auto" }, [
-      _c("table", { staticClass: "table table-striped" }, [
-        _c("tr", [
-          _c("td", [_vm._v(_vm._s(_vm.table.a1))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.table.a2))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.table.a3))])
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v(_vm._s(_vm.table.b1))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.table.b2))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.table.b3))])
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v(_vm._s(_vm.table.c1))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.table.c2))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.table.c3))])
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-8 order-sm-2" }, [
+        _c("div", { staticClass: "game-table m-auto" }, [
+          _c("table", { staticClass: "table table-striped" }, [
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("a1")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.a1))]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("a2")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.a2))]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("a3")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.a3))]
+              )
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("b1")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.b1))]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("b2")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.b2))]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("b3")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.b3))]
+              )
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("c1")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.c1))]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("c2")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.c2))]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.tdClick("c3")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.table.c3))]
+              )
+            ])
+          ])
         ])
       ]),
       _vm._v(" "),
       _c(
         "div",
+        {
+          staticClass:
+            "col-sm-2 order-sm-1 text-success font-weight-bold text-center pt-5"
+        },
         [
+          _vm._v("\n            " + _vm._s(_vm.player.name1) + " "),
           _c("br"),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
+          _vm._v("\n            " + _vm._s(_vm.player.score1) + "\n        ")
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "col-sm-2 order-sm-3 text-success font-weight-bold text-center pt-5"
+        },
+        [
+          _vm._v("\n            " + _vm._s(_vm.player.name2) + " "),
+          _c("br"),
+          _vm._v("\n            " + _vm._s(_vm.player.score2) + "\n        ")
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-3" }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-sm-6" },
+        [
           _c(
             "router-link",
             { staticClass: "btn btn-danger mr-5", attrs: { to: "/play" } },
@@ -15077,26 +15215,14 @@ var render = function() {
           _vm._v(" "),
           _c(
             "router-link",
-            { staticClass: "btn btn-secondary ml-5", attrs: { to: "/" } },
+            { staticClass: "btn btn-secondary", attrs: { to: "/" } },
             [_vm._v("Back")]
           )
         ],
         1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-6 text-success font-weight-bold" }, [
-        _vm._v("\n            Player 1 "),
-        _c("br"),
-        _vm._v("\n            " + _vm._s(_vm.player.score1) + "\n        ")
-      ]),
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-6 text-success font-weight-bold" }, [
-        _vm._v("\n            Player 2 "),
-        _c("br"),
-        _vm._v("\n            " + _vm._s(_vm.player.score2) + "\n        ")
-      ])
+      _c("div", { staticClass: "col-sm-3" })
     ])
   ])
 }
