@@ -11,9 +11,12 @@ Route::get('/', function () {
 //****************************************GAMES****************************************
 
 //Tic Tac Toe
-Route::get('games/TTT/index', 'TTTController@index');
+Route::group(['prefix' => 'games/TTT/'], function () {
+    Route::get('index/{route?}/{id?}', 'TTTController@index');
+});
+
 //Quiz
-Route::get('games/quiz/index','QuizController@index');
+Route::get('games/quiz/index', 'QuizController@index');
 
 
 Auth::routes();

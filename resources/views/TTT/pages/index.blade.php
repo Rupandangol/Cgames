@@ -1,13 +1,33 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>TEST</h1>
-</body>
-</html>
+{{--include css and js here--}}
+@section('css')
+    <style>
+        .bg-ttt {
+            min-height: 520px;
+            background: rgba(250, 50, 150, 0.2);
+        }
+    </style>
+@endsection
+
+@section('js')
+    <script src="{{url('js/TTT.js')}}"></script>
+@endsection
+
+
+@include('includes.header')
+
+<div class="row" id="TTT" style="min-height: 350px;">
+    <div class="col-md-8 order-md-2 text-center">
+        <router-view class="bg-ttt">
+
+        </router-view>
+        {{--<img src="{{url('images/game/dummy.jpg')}}" alt="image" width="100%">--}}
+    </div>
+    <div class="col-md-2 order-md-1 text-center">
+        <h1>1</h1>
+    </div>
+    <div class="col-md-2 order-md-3 text-center">
+        <h1>2</h1>
+    </div>
+</div>
+
+@include('includes.footer')
