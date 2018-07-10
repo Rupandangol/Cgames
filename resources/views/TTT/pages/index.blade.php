@@ -9,6 +9,14 @@
 @endsection
 
 @section('js')
+    <script>
+        var serverPlayer = {
+            name1: 'Player O',
+            score1: 0,
+            name2: 'Player X',
+            score2: 0
+        };
+    </script>
     <script src="{{url('js/TTT.js')}}"></script>
 @endsection
 
