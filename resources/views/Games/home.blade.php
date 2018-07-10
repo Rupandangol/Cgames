@@ -27,13 +27,14 @@ $games = [
             @endforelse
         </div>
     </div>
-    <div class="col-md-4">
-        <a href="/login">
-            <div class="border p-3">
-                <h3 class="text-success">Add new games every week!! Panel</h3>
-                <img width="280px" src="{{url('images/logo.png')}}" alt="image">
-            </div>
-        </a>
+        <div class="col-md-4">
+            <a href="/admin">
+                <div class="border p-3">
+                    <h3 class="text-success">Add new games every week!! Panel</h3>
+                    <img width="280px" src="{{url('images/logo.png')}}" alt="image">
+                </div>
+            </a>
+        </div>
     </div>
 </div>
 
