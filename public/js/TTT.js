@@ -15035,7 +15035,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.game-table {\n    width: 300px;\n    height: 300px;\n    background: white;\n}\n.game-table td {\n    height: 100px;\n    width: 100px;\n    -webkit-box-shadow: 4px 4px 10px grey;\n            box-shadow: 4px 4px 10px grey;\n}\n.game-table input {\n    height: 70px;\n    width: 70px;\n    border: none;\n    font-size: 60px;\n}\n", ""]);
+exports.push([module.i, "\n.game-table {\n    width: 300px;\n    height: 300px;\n    background: white;\n}\n.game-table td {\n    height: 100px;\n    width: 100px;\n    -webkit-box-shadow: 4px 4px 10px grey;\n            box-shadow: 4px 4px 10px grey;\n}\n.game-table input {\n    height: 70px;\n    width: 70px;\n    border: none;\n    font-size: 60px;\n}\n#message {\n    border: none;\n    background: transparent;\n    color: orangered;\n    font-weight: bold;\n}\n#winMessage {\n    border: none;\n    background: transparent;\n    color: orangered;\n    font-weight: bold;\n}\n", ""]);
 
 // exports
 
@@ -15046,6 +15046,16 @@ exports.push([module.i, "\n.game-table {\n    width: 300px;\n    height: 300px;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15134,8 +15144,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 dot1: 'X',
                 dot2: 'O',
                 count: 1
-            },
-            message: ''
+            }
         };
     },
 
@@ -15150,36 +15159,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     check.css({
                         color: 'green', 'text-shadow': '2px 2px 8px green'
                     });
-                    // this.message = this.player.name1 + '\'s move!';
+                    $('#message').val(serverPlayer.name1 + '\'s move!');
                 } else {
                     play = this.dots.dot2;
                     check.css({
                         color: 'red', 'text-shadow': '2px 2px 8px red'
                     });
-                    // this.message = this.player.name2 + '\'s move!';
+                    $('#message').val(serverPlayer.name2 + '\'s move!');
                 }
 
                 check.val(play);
                 this.dots.count++;
-                return false;
+                // return false;
             }
-
             this.checkWin();
         },
         assignPlayer: function assignPlayer() {
             this.player = serverPlayer;
-            // this.message = this.player.name1 + '\'s move!';
+            $('#message').val(serverPlayer.name1 + '\'s move!');
         },
-        reloadpage: function reloadpage() {
+        resetTable: function resetTable() {
             this.table = {
                 a1: '', a2: '', a3: '',
                 b1: '', b2: '', b3: '',
                 c1: '', c2: '', c3: ''
             };
+        },
+        reloadpage: function reloadpage() {
+            this.resetTable();
             serverPlayer.score1 = 0;
             serverPlayer.score2 = 0;
         },
         checkWin: function checkWin() {
+            var thisMain = this;
             var match = {
                 0: { 0: 'a1', 1: 'a2', 2: 'a3' },
                 1: { 0: 'b1', 1: 'b2', 2: 'b3' },
@@ -15190,6 +15202,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 6: { 0: 'a1', 1: 'b2', 2: 'c3' },
                 7: { 0: 'c1', 1: 'b2', 2: 'a3' }
             };
+
             $.each(match, function (index, items) {
                 var playO = 0;
                 var playX = 0;
@@ -15203,14 +15216,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
                     if (playO === 3) {
                         serverPlayer.score1++;
+                        $('#winMessageBlock').show();
+                        $('#winMessage').val(serverPlayer.name1 + ' wins this match ! ');
+                        thisMain.dots.count = 1;
+                        setTimeout(function () {
+                            $('#winMessage').val(' ');
+                            $('#winMessageBlock').hide();
+                        }, 2000);
                     } else if (playX === 3) {
                         serverPlayer.score2++;
+                        $('#winMessageBlock').show();
+                        $('#winMessage').val(serverPlayer.name2 + ' wins this match ! ');
+                        thisMain.dots.count = 1;
+                        setTimeout(function () {
+                            $('#winMessage').val(' ');
+                            $('#winMessageBlock').hide();
+                        }, 2000);
                     }
                 });
             });
+            var checkCount = this.dots.count;
+            if (checkCount === 10) {
+                this.dots.count = 1;
+                this.resetTable();
+            }
         }
     },
     created: function created() {
+        // this.assignPlayer();
+    },
+    mounted: function mounted() {
         this.assignPlayer();
     }
 });
@@ -15227,6 +15262,10 @@ var render = function() {
     _c("h1", [_vm._v("Tic Tac Toe")]),
     _vm._v(" "),
     _c("br"),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm-8 order-sm-2" }, [
@@ -15494,7 +15533,41 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticStyle: { display: "none" }, attrs: { id: "winMessageBlock" } },
+      [
+        _c("b", { staticClass: "text-danger" }, [
+          _c("i", { staticClass: "fa fa-gift fa-2x text-primary" }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", id: "winMessage", readonly: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("br")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("b", { staticClass: "text-danger" }, [
+      _c("i", {
+        staticClass: "fa fa-gamepad lead text-info",
+        staticStyle: { "font-size": "20px" }
+      }),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "text", id: "message", readonly: "" } })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
