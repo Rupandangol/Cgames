@@ -14730,7 +14730,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -14791,13 +14791,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            player1: serverPlayer.name1,
+            player2: serverPlayer.name2
+        };
     },
 
-    methods: {}
+    methods: {
+        editName: function editName(value) {
+            var check = value;
+            if (check == 1) {
+                serverPlayer.name1 = this.player1;
+            } else if (check == 2) {
+                serverPlayer.name2 = this.player2;
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -14812,6 +14834,70 @@ var render = function() {
     "div",
     [
       _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4 ml-5 mr-5" }, [
+          _c("i", { staticClass: "fa fa-user" }, [
+            _vm._v(" Enter player 1 name")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.player1,
+                expression: "player1"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text" },
+            domProps: { value: _vm.player1 },
+            on: {
+              change: function($event) {
+                _vm.editName(1)
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.player1 = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-4 ml-5 mr-5" }, [
+          _c("i", { staticClass: "fa fa-user" }, [
+            _vm._v(" Enter player 2 name")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.player2,
+                expression: "player2"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text" },
+            domProps: { value: _vm.player2 },
+            on: {
+              change: function($event) {
+                _vm.editName(2)
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.player2 = $event.target.value
+              }
+            }
+          })
+        ])
+      ]),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
@@ -14949,7 +15035,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.game-table {\n    width: 300px;\n    height: 300px;\n    background: white;\n}\n.game-table td {\n    height: 100px;\n    width: 100px;\n    -webkit-box-shadow: 4px 4px 10px grey;\n            box-shadow: 4px 4px 10px grey;\n}\n", ""]);
+exports.push([module.i, "\n.game-table {\n    width: 300px;\n    height: 300px;\n    background: white;\n}\n.game-table td {\n    height: 100px;\n    width: 100px;\n    -webkit-box-shadow: 4px 4px 10px grey;\n            box-shadow: 4px 4px 10px grey;\n}\n.game-table input {\n    height: 70px;\n    width: 70px;\n    border: none;\n    font-size: 60px;\n}\n", ""]);
 
 // exports
 
@@ -15009,29 +15095,123 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             table: {
-                a1: '.', a2: '.', a3: '.',
-                b1: '.', b2: '.', b3: '.',
-                c1: '.', c2: '.', c3: '.'
+                a1: '', a2: '', a3: '',
+                b1: '', b2: '', b3: '',
+                c1: '', c2: '', c3: ''
             },
-            player: {
-                name1: 'Player 1',
-                score1: 0,
-                name2: 'Player 2',
-                score2: 0
-            }
+            player: '',
+            dots: {
+                dot1: 'X',
+                dot2: 'O',
+                count: 1
+            },
+            message: ''
         };
     },
 
     methods: {
-        tdClick: function tdClick(value) {
-            var tableval = value;
-            if (tableval === 'a1') this.table.a1 = 'x';
+        tdClick: function tdClick(id) {
+            var check = $('#' + id + ' input');
+            var play = '';
+
+            if (check.val() == '') {
+                if (this.dots.count % 2 === 0) {
+                    play = this.dots.dot1;
+                    check.css({
+                        color: 'green', 'text-shadow': '2px 2px 8px green'
+                    });
+                    // this.message = this.player.name1 + '\'s move!';
+                } else {
+                    play = this.dots.dot2;
+                    check.css({
+                        color: 'red', 'text-shadow': '2px 2px 8px red'
+                    });
+                    // this.message = this.player.name2 + '\'s move!';
+                }
+
+                check.val(play);
+                this.dots.count++;
+                return false;
+            }
+
+            this.checkWin();
+        },
+        assignPlayer: function assignPlayer() {
+            this.player = serverPlayer;
+            // this.message = this.player.name1 + '\'s move!';
+        },
+        reloadpage: function reloadpage() {
+            this.table = {
+                a1: '', a2: '', a3: '',
+                b1: '', b2: '', b3: '',
+                c1: '', c2: '', c3: ''
+            };
+            serverPlayer.score1 = 0;
+            serverPlayer.score2 = 0;
+        },
+        checkWin: function checkWin() {
+            var match = {
+                0: { 0: 'a1', 1: 'a2', 2: 'a3' },
+                1: { 0: 'b1', 1: 'b2', 2: 'b3' },
+                2: { 0: 'c1', 1: 'c2', 2: 'c3' },
+                3: { 0: 'a1', 1: 'b1', 2: 'c1' },
+                4: { 0: 'a2', 1: 'b2', 2: 'c2' },
+                5: { 0: 'a3', 1: 'b3', 2: 'c3' },
+                6: { 0: 'a1', 1: 'b2', 2: 'c3' },
+                7: { 0: 'c1', 1: 'b2', 2: 'a3' }
+            };
+            $.each(match, function (index, items) {
+                var playO = 0;
+                var playX = 0;
+
+                $.each(items, function (index, item) {
+                    var check = $('#' + item + ' input');
+                    if (check.val() === 'X') {
+                        playX++;
+                    } else if (check.val() === 'O') {
+                        playO++;
+                    }
+                    if (playO === 3) {
+                        serverPlayer.score1++;
+                    } else if (playX === 3) {
+                        serverPlayer.score2++;
+                    }
+                });
+            });
         }
+    },
+    created: function created() {
+        this.assignPlayer();
     }
 });
 
@@ -15056,37 +15236,58 @@ var render = function() {
               _c(
                 "td",
                 {
+                  attrs: { id: "a1" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("a1")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.a1))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.a1 }
+                  })
+                ]
               ),
               _vm._v(" "),
               _c(
                 "td",
                 {
+                  attrs: { id: "a2" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("a2")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.a2))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.a2 }
+                  })
+                ]
               ),
               _vm._v(" "),
               _c(
                 "td",
                 {
+                  attrs: { id: "a3" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("a3")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.a3))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.a3 }
+                  })
+                ]
               )
             ]),
             _vm._v(" "),
@@ -15094,37 +15295,58 @@ var render = function() {
               _c(
                 "td",
                 {
+                  attrs: { id: "b1" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("b1")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.b1))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.b1 }
+                  })
+                ]
               ),
               _vm._v(" "),
               _c(
                 "td",
                 {
+                  attrs: { id: "b2" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("b2")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.b2))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.b2 }
+                  })
+                ]
               ),
               _vm._v(" "),
               _c(
                 "td",
                 {
+                  attrs: { id: "b3" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("b3")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.b3))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.b3 }
+                  })
+                ]
               )
             ]),
             _vm._v(" "),
@@ -15132,37 +15354,58 @@ var render = function() {
               _c(
                 "td",
                 {
+                  attrs: { id: "c1" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("c1")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.c1))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.c1 }
+                  })
+                ]
               ),
               _vm._v(" "),
               _c(
                 "td",
                 {
+                  attrs: { id: "c2" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("c2")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.c2))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.c2 }
+                  })
+                ]
               ),
               _vm._v(" "),
               _c(
                 "td",
                 {
+                  attrs: { id: "c3" },
                   on: {
                     click: function($event) {
                       _vm.tdClick("c3")
                     }
                   }
                 },
-                [_vm._v(_vm._s(_vm.table.c3))]
+                [
+                  _c("input", {
+                    staticClass: "text-center",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.table.c3 }
+                  })
+                ]
               )
             ])
           ])
@@ -15176,9 +15419,18 @@ var render = function() {
             "col-sm-2 order-sm-1 text-success font-weight-bold text-center pt-5"
         },
         [
+          _c("i", { staticClass: "fa fa-user" }),
+          _c("br"),
           _vm._v("\n            " + _vm._s(_vm.player.name1) + " "),
           _c("br"),
-          _vm._v("\n            " + _vm._s(_vm.player.score1) + "\n        ")
+          _vm._v(" "),
+          _c("b", { staticStyle: { "font-size": "30px", color: "yellow" } }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.player.score1) +
+                "\n            "
+            )
+          ])
         ]
       ),
       _vm._v(" "),
@@ -15189,9 +15441,18 @@ var render = function() {
             "col-sm-2 order-sm-3 text-success font-weight-bold text-center pt-5"
         },
         [
+          _c("i", { staticClass: "fa fa-user" }),
+          _c("br"),
           _vm._v("\n            " + _vm._s(_vm.player.name2) + " "),
           _c("br"),
-          _vm._v("\n            " + _vm._s(_vm.player.score2) + "\n        ")
+          _vm._v(" "),
+          _c("b", { staticStyle: { "font-size": "30px", color: "yellow" } }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.player.score2) +
+                "\n            "
+            )
+          ])
         ]
       )
     ]),
@@ -15208,9 +15469,16 @@ var render = function() {
         { staticClass: "col-sm-6" },
         [
           _c(
-            "router-link",
-            { staticClass: "btn btn-danger mr-5", attrs: { to: "/play" } },
-            [_vm._v("New game")]
+            "button",
+            {
+              staticClass: "btn btn-danger mr-5",
+              on: {
+                click: function($event) {
+                  _vm.reloadpage()
+                }
+              }
+            },
+            [_vm._v("Reset Score !")]
           ),
           _vm._v(" "),
           _c(
