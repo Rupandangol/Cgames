@@ -8,34 +8,12 @@
     <title>Collaborate Games</title>
     <link rel="shortcut icon" type="image/png" href="{{URL::to('images/icon.png')}}">
     <link rel="stylesheet" href="{{url('css/app.css')}}">
-    <style>
-        .bg-body {
-            background: rgba(50, 50, 250, 0.3);
-        }
-
-        .bg-custom-container {
-            background: url("{{url('images/paper.jpg')}}") fixed no-repeat center/cover;
-        }
-
-        .bg-header {
-            background: linear-gradient(to right, transparent, lightgray, lightgrey, lightgrey, transparent);
-        }
-
-        .logo-image {
-            padding: 10px 0;
-            height: 80px;
-            width: 80px;
-            border: 1px solid darkred;
-            border-radius: 50%;
-            box-shadow: 5px 5px 5px grey;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="{{url('css/customStyle.css')}}">
     @yield('css')
 </head>
 <body class="bg-body">
 <div class="container bg-custom-container">
+    {{--header--}}
     <div class="row p-3 bg-header">
         <div class="col-sm-3 col-md-3 text-right">
             <b class="text-info" style="font-size: 1.5em;">Collaborate <br>Games</b>
@@ -49,4 +27,5 @@
             <br><b class="text-info">Play and share your games <br>in this free platform!</b>
         </div>
     </div>
+    {{--header end--}}
     <hr>
