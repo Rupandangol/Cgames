@@ -1,8 +1,8 @@
 <?php
 $games = [
     '0' => ['name' => 'Quiz', 'url' => 'quiz', 'image' => 'dummy.jpg'],
-    '1' => ['name' => 'Tic Tac Toe', 'url' => 'TTT', 'image' => 'dummy.jpg'],
-//    '2' => ['name' => 'Tic Tac Toe', 'url' => 'TTT', 'image' => 'dummy.jpg']
+    '1' => ['name' => 'Tic Tac Toe', 'url' => 'TTT', 'image' => 'tictactoe.jpg'],
+    '2' => ['name' => 'Hangman Style', 'url' => 'hangman', 'image' => 'hangman.jpg']
 ];
 
 ?>
@@ -18,7 +18,7 @@ $games = [
                         <div class="game-block text-center p-2 bg-dark">
                             <h4 class="text-danger">{{$game['name']}}</h4>
                             <img src="{{url('images/game/'.$game['image'])}}" alt="image"
-                                 style="width:100%;max-height:280px;">
+                                 style="width:220px;height:220px;">
                         </div>
                     </a>
                 </div>
