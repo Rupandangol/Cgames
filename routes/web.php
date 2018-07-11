@@ -15,6 +15,12 @@ Route::group(['prefix' => 'games/TTT/'], function () {
     Route::get('index/{route?}/{id?}', 'TTTController@index');
 });
 
+//HangMan
+Route::group(['prefix' => 'games/hangman/'], function () {
+    Route::get('index/{route?}/{id?}', 'HangmanController@index');
+});
+
+
 //Quiz
 Route::get('games/quiz/index', 'QuizController@index');
 
