@@ -11,7 +11,7 @@
 @section('js')
     <script>
         var server = {
-            word: '',
+            word: 'abcdefgabcdefg',
             hint: 'No hint! hehehe',
             chance: 5,
         }
