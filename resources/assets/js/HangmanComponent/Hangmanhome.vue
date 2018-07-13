@@ -37,7 +37,9 @@
             </div>
         </div>
         <br>
-        <router-link to="/play" class="btn btn-primary btn-lg">Play</router-link>
+        <router-link to="/play">
+            <button class="btn btn-primary btn-lg" v-on:click="playWord()">Play</button>
+        </router-link>
     </div>
 </template>
 
@@ -49,7 +51,10 @@
             }
         },
         methods: {
-            assignWord: function () {
+            playWord() {
+                server = this.hangman;
+            },
+            assignWord() {
                 this.hangman = server;
             }
         },
