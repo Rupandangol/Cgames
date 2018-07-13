@@ -53,7 +53,6 @@
         methods: {
             playWord() {
                 server = this.hangman;
-                console.log(server);
             },
             assignWord() {
                 this.hangman = server;

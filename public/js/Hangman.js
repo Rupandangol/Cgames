@@ -14773,7 +14773,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -14840,7 +14840,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         playWord: function playWord() {
             server = this.hangman;
-            console.log(server);
         },
         assignWord: function assignWord() {
             this.hangman = server;
@@ -15138,7 +15137,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.hangman {\n    padding: 20px;\n    height: 320px;\n    width: 150px;\n    /*background: white;*/\n}\n\n", ""]);
+exports.push([module.i, "\n.hangman {\n    padding: 20px;\n    height: 320px;\n    width: 150px;\n    /*background: white;*/\n}\n.hang-letter {\n    font-weight: bold;\n    font-size: 30px;\n    padding: 3px;\n}\n.hang-answer {\n}\n.disabled {\n    display: none;\n}\n\n", ""]);
 
 // exports
 
@@ -15178,14 +15177,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             hangman: '',
             wordArray: '',
-            letters: 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z',
-            letterArray: ''
+            letters1: 'a,b,c,d,e,f,g,h,i,j',
+            letters2: 'k,l,m,n,o,p,q,r,s,t',
+            letters3: 'u,v,w,x,y,z',
+            letterArray1: '',
+            letterArray2: '',
+            letterArray3: '',
+            count: '',
+            answer: [],
+            image: '',
+            ind: 0,
+            answerCount: ''
         };
     },
 
@@ -15193,7 +15219,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         assignWord: function assignWord() {
             this.hangman = server;
             this.wordArray = this.hangman.word.split('');
-            this.letterArray = this.letters.split(',');
+            var str = this.hangman.word;
+            var stringsp = str.split(' ').join('');
+            this.answerCount = $.unique(stringsp.split('')).length;
+            this.letterArray1 = this.letters1.split(',');
+            this.letterArray2 = this.letters2.split(',');
+            this.letterArray3 = this.letters3.split(',');
+
+            this.count = server.chance;
+            this.image = "/images/hangman/hang-" + this.count + ".png";
+        },
+        checkWords: function checkWords(letter) {
+            var cval = $.inArray(letter, this.answer);
+            if (cval != '-1') {
+                return true;
+            }
+        },
+        checkSpace: function checkSpace(letter) {
+            if (letter == ' ') {
+                return true;
+            }
+        },
+        populateAnswer: function populateAnswer(item) {
+            this.answer += item;
+            $('#' + item).addClass('disabled');
+            var check = $.inArray(item, server.word);
+            if (check == '-1') {
+                this.count--;
+                if (this.count < 1) {
+                    $('.hang-answer').css({ display: 'none' });
+                    this.image = "/images/hangman/hang-loss.png";
+                } else {
+                    this.image = "/images/hangman/hang-" + this.count + ".png";
+                }
+            } else {
+                var countCheck = --this.answerCount;
+                if (countCheck == 0) {
+                    this.image = "/images/hangman/hang-win.png";
+                    $('.hang-answer').css({ display: 'none' });
+                }
+            }
         }
     },
     created: function created() {
@@ -15211,7 +15276,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "row" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "col-sm-4" }, [
+        _c("img", {
+          staticClass: "hangman border",
+          attrs: { src: _vm.image, alt: "image" }
+        }),
+        _vm._v(" "),
+        _c("br"),
+        _c("br")
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -15219,11 +15292,21 @@ var render = function() {
         [
           _c("br"),
           _vm._v(" "),
+          _c("h5", { staticClass: "alert alert-warning" }, [
+            _vm._v(_vm._s(_vm.hangman.hint))
+          ]),
+          _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
           _vm._l(_vm.wordArray, function(letter) {
             return _c("div", { staticStyle: { display: "inline" } }, [
-              _vm._v("\n                " + _vm._s(letter) + "\n            ")
+              _vm.checkSpace(letter)
+                ? _c("i", { staticClass: "hang-letter" }, [_vm._v("  ")])
+                : _vm.checkWords(letter)
+                  ? _c("i", { staticClass: "hang-letter" }, [
+                      _vm._v(_vm._s(letter))
+                    ])
+                  : _c("i", { staticClass: "hang-letter" }, [_vm._v(" _ ")])
             ])
           }),
           _vm._v(" "),
@@ -15234,44 +15317,91 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("table", [
-        _c(
-          "tr",
-          _vm._l(_vm.letterArray, function(item) {
-            return _c("td", [_vm._v(_vm._s(item))])
-          })
-        )
+      _c(
+        "div",
+        { staticClass: "col-sm-3" },
+        [
+          _c(
+            "router-link",
+            { staticClass: "btn btn-danger", attrs: { to: "/" } },
+            [_vm._v("New "), _c("br"), _vm._v("Game !")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-9 text-center" }, [
+        _c("table", [
+          _c(
+            "tr",
+            _vm._l(_vm.letterArray1, function(item) {
+              return _c("td", [
+                _c(
+                  "i",
+                  {
+                    staticClass: "hang-answer btn btn-xs btn-info",
+                    attrs: { id: item },
+                    on: {
+                      click: function($event) {
+                        _vm.populateAnswer(item)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(item))]
+                )
+              ])
+            })
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            _vm._l(_vm.letterArray2, function(item) {
+              return _c("td", [
+                _c(
+                  "i",
+                  {
+                    staticClass: "hang-answer btn btn-xs btn-info",
+                    attrs: { id: item },
+                    on: {
+                      click: function($event) {
+                        _vm.populateAnswer(item)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(item))]
+                )
+              ])
+            })
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            _vm._l(_vm.letterArray3, function(item) {
+              return _c("td", [
+                _c(
+                  "i",
+                  {
+                    staticClass: "hang-answer btn btn-xs btn-info",
+                    attrs: { id: item },
+                    on: {
+                      click: function($event) {
+                        _vm.populateAnswer(item)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(item))]
+                )
+              ])
+            })
+          )
+        ]),
+        _vm._v(" "),
+        _c("br")
       ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _c(
-          "router-link",
-          { staticClass: "btn btn-secondary", attrs: { to: "/" } },
-          [_vm._v("Back")]
-        )
-      ],
-      1
-    )
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-4" }, [
-      _c("p", [_vm._v("change image on mistake")]),
-      _vm._v(" "),
-      _c("img", {
-        staticClass: "hangman",
-        attrs: { src: "/images/hangman/hang-1.png", alt: "image" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
