@@ -16,8 +16,9 @@ class CreateGameListsTable extends Migration
         Schema::create('game_lists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description');
+            $table->text('detail')->nullable();
             $table->string('image');
+            $table->string('url');
             $table->timestamps();
         });
     }
