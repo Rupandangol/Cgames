@@ -1,0 +1,22 @@
+/*Custom CSS*/
+.bg-body {
+    background: rgba(50, 50, 250, 0.3);
+}
+
+.bg-custom-container {
+    background: url('../images/paper.jpg') fixed no-repeat center/cover;
+}
+
+.bg-header {
+    background: linear-gradient(to right, transparent, lightgray, lightgrey, lightgrey, transparent);
+}
+
+.logo-image {
+    padding: 10px 0;
+    height: 80px;
+    width: 80px;
+    border: 1px solid darkred;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px grey;
+}
+

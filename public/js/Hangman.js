@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 43);
+/******/ 	return __webpack_require__(__webpack_require__.s = 60);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -14625,25 +14625,40 @@ module.exports = function listToStyles (parentId, list) {
 /* 40 */,
 /* 41 */,
 /* 42 */,
-/* 43 */
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(44);
+module.exports = __webpack_require__(61);
 
 
 /***/ }),
-/* 44 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TTTComponent_TTThome__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TTTComponent_TTThome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__TTTComponent_TTThome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TTTComponent_TTTplay__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TTTComponent_TTTplay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__TTTComponent_TTTplay__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__TTTComponent_TTTscore__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__TTTComponent_TTTscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__TTTComponent_TTTscore__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HangmanComponent_Hangmanhome__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HangmanComponent_Hangmanhome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__HangmanComponent_Hangmanhome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__HangmanComponent_Hangmanplay__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__HangmanComponent_Hangmanplay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__HangmanComponent_Hangmanplay__);
 window.Vue = __webpack_require__(7);
 
 
@@ -14652,45 +14667,40 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 
 
 
-
-Vue.component('TTThome', __WEBPACK_IMPORTED_MODULE_1__TTTComponent_TTThome___default.a);
-Vue.component('TTTplay', __WEBPACK_IMPORTED_MODULE_2__TTTComponent_TTTplay___default.a);
-Vue.component('TTTscore', __WEBPACK_IMPORTED_MODULE_3__TTTComponent_TTTscore___default.a);
+Vue.component('Hangmanhome', __WEBPACK_IMPORTED_MODULE_1__HangmanComponent_Hangmanhome___default.a);
+Vue.component('Hangmanplay', __WEBPACK_IMPORTED_MODULE_2__HangmanComponent_Hangmanplay___default.a);
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     mode: 'history',
-    base: '/games/TTT/index',
+    base: '/games/hangman/index',
     routes: [{
         path: '/',
-        component: __WEBPACK_IMPORTED_MODULE_1__TTTComponent_TTThome___default.a
+        component: __WEBPACK_IMPORTED_MODULE_1__HangmanComponent_Hangmanhome___default.a
     }, {
         path: '/play',
-        component: __WEBPACK_IMPORTED_MODULE_2__TTTComponent_TTTplay___default.a
-    }, {
-        path: '/score',
-        component: __WEBPACK_IMPORTED_MODULE_3__TTTComponent_TTTscore___default.a
+        component: __WEBPACK_IMPORTED_MODULE_2__HangmanComponent_Hangmanplay___default.a
     }]
 });
 
-var TTT = new Vue({
+var Hangman = new Vue({
     router: router,
-    el: '#TTT'
+    el: '#Hangman'
 });
 
 /***/ }),
-/* 45 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(46)
+  __webpack_require__(63)
 }
 var normalizeComponent = __webpack_require__(4)
 /* script */
-var __vue_script__ = __webpack_require__(48)
+var __vue_script__ = __webpack_require__(65)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(66)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -14707,7 +14717,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/TTTComponent/TTThome.vue"
+Component.options.__file = "resources/assets/js/HangmanComponent/Hangmanhome.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -14716,9 +14726,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ed953a42", Component.options)
+    hotAPI.createRecord("data-v-5074fa5f", Component.options)
   } else {
-    hotAPI.reload("data-v-ed953a42", Component.options)
+    hotAPI.reload("data-v-5074fa5f", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -14729,23 +14739,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(47);
+var content = __webpack_require__(64);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("430e361e", content, false, {});
+var update = __webpack_require__(3)("4e9d780c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed953a42\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TTThome.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed953a42\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TTThome.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5074fa5f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Hangmanhome.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5074fa5f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Hangmanhome.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -14755,7 +14765,7 @@ if(false) {
 }
 
 /***/ }),
-/* 47 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -14763,17 +14773,35 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 48 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -14805,25 +14833,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            player1: serverPlayer.name1,
-            player2: serverPlayer.name2
+            hangman: ''
         };
     },
 
     methods: {
-        editName: function editName(value) {
-            var check = value;
-            if (check == 1) {
-                serverPlayer.name1 = this.player1;
-            } else if (check == 2) {
-                serverPlayer.name2 = this.player2;
-            }
+        playWord: function playWord() {
+            server = this.hangman;
+        },
+        assignWord: function assignWord() {
+            this.hangman = server;
         }
+    },
+    mounted: function mounted() {
+        this.assignWord();
     }
 });
 
 /***/ }),
-/* 49 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -14835,87 +14863,118 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4 ml-5 mr-5" }, [
-          _c("i", { staticClass: "fa fa-user" }, [
-            _vm._v(" Enter player 1 name")
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("div", { staticClass: "row m-1" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-8" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.hangman.word,
+                    expression: "hangman.word"
+                  }
+                ],
+                staticClass: "form-control text-center",
+                attrs: {
+                  type: "text",
+                  placeholder: "Type the hang word here!",
+                  required: ""
+                },
+                domProps: { value: _vm.hangman.word },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.hangman, "word", $event.target.value)
+                  }
+                }
+              })
+            ])
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.player1,
-                expression: "player1"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text" },
-            domProps: { value: _vm.player1 },
-            on: {
-              change: function($event) {
-                _vm.editName(1)
-              },
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("div", { staticClass: "row m-1" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-8" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.hangman.hint,
+                    expression: "hangman.hint"
+                  }
+                ],
+                staticClass: "form-control text-center",
+                attrs: { type: "text" },
+                domProps: { value: _vm.hangman.hint },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.hangman, "hint", $event.target.value)
+                  }
                 }
-                _vm.player1 = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-4 ml-5 mr-5" }, [
-          _c("i", { staticClass: "fa fa-user" }, [
-            _vm._v(" Enter player 2 name")
+              })
+            ])
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.player2,
-                expression: "player2"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text" },
-            domProps: { value: _vm.player2 },
-            on: {
-              change: function($event) {
-                _vm.editName(2)
-              },
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("div", { staticClass: "row m-1" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-2" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.hangman.chance,
+                    expression: "hangman.chance"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.hangman.chance },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.hangman, "chance", $event.target.value)
+                  }
                 }
-                _vm.player2 = $event.target.value
-              }
-            }
-          })
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(4)
+          ])
         ])
       ]),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
-      _c(
-        "router-link",
-        { staticClass: "btn btn-primary btn-lg", attrs: { to: "/play" } },
-        [_vm._v("Play")]
-      ),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        { staticClass: "btn btn-warning btn-lg", attrs: { to: "/score" } },
-        [_vm._v("Scoreboard")]
-      )
+      _c("router-link", { attrs: { to: "/play" } }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary btn-lg",
+            on: {
+              click: function($event) {
+                _vm.playWord()
+              }
+            }
+          },
+          [_vm._v("Play")]
+        )
+      ])
     ],
     1
   )
@@ -14928,15 +14987,58 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col" }, [
         _c("br"),
-        _c("br"),
-        _c("br"),
         _vm._v(" "),
         _c("img", {
-          attrs: { height: "150px", src: "/images/game/tictactoe.jpg", alt: "" }
+          attrs: {
+            height: "150px",
+            src: "/images/game/hangman.jpg",
+            alt: "image"
+          }
         }),
         _vm._v(" "),
-        _c("h2", [_vm._v("Tic Tac Toe")])
+        _c("h2", [_vm._v("Hangman Style")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-sm-3 font-weight-bold text-right" },
+      [_c("i", { staticClass: "fa fa-edit" }), _vm._v(" Word : ")]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-sm-3 font-weight-bold text-right" },
+      [
+        _c("i", { staticClass: "fa fa-exclamation" }),
+        _vm._v(" Hint :\n                ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-sm-3 font-weight-bold text-right" },
+      [_c("i", { staticClass: "fa fa-chance" }), _vm._v(" Chance : ")]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-5" }, [
+      _c("i", [_vm._v("(chance ranges 4-7)")])
     ])
   }
 ]
@@ -14945,24 +15047,24 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-ed953a42", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-5074fa5f", module.exports)
   }
 }
 
 /***/ }),
-/* 50 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(51)
+  __webpack_require__(68)
 }
 var normalizeComponent = __webpack_require__(4)
 /* script */
-var __vue_script__ = __webpack_require__(53)
+var __vue_script__ = __webpack_require__(70)
 /* template */
-var __vue_template__ = __webpack_require__(54)
+var __vue_template__ = __webpack_require__(71)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -14979,7 +15081,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/TTTComponent/TTTplay.vue"
+Component.options.__file = "resources/assets/js/HangmanComponent/Hangmanplay.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -14988,9 +15090,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-162bc6b4", Component.options)
+    hotAPI.createRecord("data-v-45294398", Component.options)
   } else {
-    hotAPI.reload("data-v-162bc6b4", Component.options)
+    hotAPI.reload("data-v-45294398", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -15001,23 +15103,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(52);
+var content = __webpack_require__(69);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("551b92e4", content, false, {});
+var update = __webpack_require__(3)("01a0093c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-162bc6b4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TTTplay.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-162bc6b4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TTTplay.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-45294398\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Hangmanplay.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-45294398\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Hangmanplay.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -15027,7 +15129,7 @@ if(false) {
 }
 
 /***/ }),
-/* 52 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -15035,54 +15137,17 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.game-table {\n    width: 300px;\n    height: 300px;\n    background: white;\n}\n.game-table td {\n    height: 100px;\n    width: 100px;\n    -webkit-box-shadow: 4px 4px 10px grey;\n            box-shadow: 4px 4px 10px grey;\n}\n.game-table input {\n    height: 70px;\n    width: 70px;\n    border: none;\n    font-size: 60px;\n}\n#message {\n    border: none;\n    background: transparent;\n    color: orangered;\n    font-weight: bold;\n}\n#winMessage {\n    border: none;\n    background: transparent;\n    color: orangered;\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.hangman {\n    padding: 20px;\n    height: 320px;\n    width: 150px;\n    /*background: white;*/\n}\n.hang-letter {\n    font-weight: bold;\n    font-size: 30px;\n    padding: 3px;\n}\n.hang-answer {\n}\n.disabled {\n    display: none;\n}\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 53 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -15134,124 +15199,75 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            table: {
-                a1: '', a2: '', a3: '',
-                b1: '', b2: '', b3: '',
-                c1: '', c2: '', c3: ''
-            },
-            player: '',
-            dots: {
-                dot1: 'X',
-                dot2: 'O',
-                count: 1
-            }
+            hangman: '',
+            wordArray: '',
+            letters1: 'a,b,c,d,e,f,g,h,i,j',
+            letters2: 'k,l,m,n,o,p,q,r,s,t',
+            letters3: 'u,v,w,x,y,z',
+            letterArray1: '',
+            letterArray2: '',
+            letterArray3: '',
+            count: '',
+            answer: [],
+            image: '',
+            ind: 0,
+            answerCount: ''
         };
     },
 
     methods: {
-        tdClick: function tdClick(id) {
-            var check = $('#' + id + ' input');
-            var play = '';
+        assignWord: function assignWord() {
+            this.hangman = server;
+            this.wordArray = this.hangman.word.split('');
+            var str = this.hangman.word;
+            var stringsp = str.split(' ').join('');
+            this.answerCount = $.unique(stringsp.split('')).length;
+            this.letterArray1 = this.letters1.split(',');
+            this.letterArray2 = this.letters2.split(',');
+            this.letterArray3 = this.letters3.split(',');
 
-            if (check.val() == '') {
-                if (this.dots.count % 2 === 0) {
-                    play = this.dots.dot1;
-                    check.css({
-                        color: 'green', 'text-shadow': '2px 2px 8px green'
-                    });
-                    $('#message').val(serverPlayer.name1 + '\'s move!');
-                } else {
-                    play = this.dots.dot2;
-                    check.css({
-                        color: 'red', 'text-shadow': '2px 2px 8px red'
-                    });
-                    $('#message').val(serverPlayer.name2 + '\'s move!');
-                }
-
-                check.val(play);
-                this.dots.count++;
-                // return false;
+            this.count = server.chance;
+            this.image = "/images/hangman/hang-" + this.count + ".png";
+        },
+        checkWords: function checkWords(letter) {
+            var cval = $.inArray(letter, this.answer);
+            if (cval != '-1') {
+                return true;
             }
-            this.checkWin();
         },
-        assignPlayer: function assignPlayer() {
-            this.player = serverPlayer;
-            $('#message').val(serverPlayer.name1 + '\'s move!');
+        checkSpace: function checkSpace(letter) {
+            if (letter == ' ') {
+                return true;
+            }
         },
-        resetTable: function resetTable() {
-            this.table = {
-                a1: '', a2: '', a3: '',
-                b1: '', b2: '', b3: '',
-                c1: '', c2: '', c3: ''
-            };
-        },
-        reloadpage: function reloadpage() {
-            this.resetTable();
-            serverPlayer.score1 = 0;
-            serverPlayer.score2 = 0;
-        },
-        checkWin: function checkWin() {
-            var thisMain = this;
-            var match = {
-                0: { 0: 'a1', 1: 'a2', 2: 'a3' },
-                1: { 0: 'b1', 1: 'b2', 2: 'b3' },
-                2: { 0: 'c1', 1: 'c2', 2: 'c3' },
-                3: { 0: 'a1', 1: 'b1', 2: 'c1' },
-                4: { 0: 'a2', 1: 'b2', 2: 'c2' },
-                5: { 0: 'a3', 1: 'b3', 2: 'c3' },
-                6: { 0: 'a1', 1: 'b2', 2: 'c3' },
-                7: { 0: 'c1', 1: 'b2', 2: 'a3' }
-            };
-
-            $.each(match, function (index, items) {
-                var playO = 0;
-                var playX = 0;
-
-                $.each(items, function (index, item) {
-                    var check = $('#' + item + ' input');
-                    if (check.val() === 'X') {
-                        playX++;
-                    } else if (check.val() === 'O') {
-                        playO++;
-                    }
-                    if (playO === 3) {
-                        serverPlayer.score1++;
-                        $('#winMessageBlock').show();
-                        $('#winMessage').val(serverPlayer.name1 + ' wins this match ! ');
-                        thisMain.dots.count = 1;
-                        setTimeout(function () {
-                            $('#winMessage').val(' ');
-                            $('#winMessageBlock').hide();
-                        }, 2000);
-                    } else if (playX === 3) {
-                        serverPlayer.score2++;
-                        $('#winMessageBlock').show();
-                        $('#winMessage').val(serverPlayer.name2 + ' wins this match ! ');
-                        thisMain.dots.count = 1;
-                        setTimeout(function () {
-                            $('#winMessage').val(' ');
-                            $('#winMessageBlock').hide();
-                        }, 2000);
-                    }
-                });
-            });
-            var checkCount = this.dots.count;
-            if (checkCount === 10) {
-                this.dots.count = 1;
-                this.resetTable();
+        populateAnswer: function populateAnswer(item) {
+            this.answer += item;
+            $('#' + item).addClass('disabled');
+            var check = $.inArray(item, server.word);
+            if (check == '-1') {
+                this.count--;
+                if (this.count < 1) {
+                    $('.hang-answer').css({ display: 'none' });
+                    this.image = "/images/hangman/hang-loss.png";
+                } else {
+                    this.image = "/images/hangman/hang-" + this.count + ".png";
+                }
+            } else {
+                var countCheck = --this.answerCount;
+                if (countCheck == 0) {
+                    this.image = "/images/hangman/hang-win.png";
+                    $('.hang-answer').css({ display: 'none' });
+                }
             }
         }
     },
     created: function created() {
-        // this.assignPlayer();
-    },
-    mounted: function mounted() {
-        this.assignPlayer();
+        this.assignWord();
     }
 });
 
 /***/ }),
-/* 54 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -15259,459 +15275,131 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("Tic Tac Toe")]),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-8 order-sm-2" }, [
-        _c("div", { staticClass: "game-table m-auto" }, [
-          _c("table", { staticClass: "table table-striped" }, [
-            _c("tr", [
-              _c(
-                "td",
-                {
-                  attrs: { id: "a1" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("a1")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.a1 }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                {
-                  attrs: { id: "a2" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("a2")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.a2 }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                {
-                  attrs: { id: "a3" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("a3")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.a3 }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c(
-                "td",
-                {
-                  attrs: { id: "b1" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("b1")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.b1 }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                {
-                  attrs: { id: "b2" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("b2")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.b2 }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                {
-                  attrs: { id: "b3" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("b3")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.b3 }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c(
-                "td",
-                {
-                  attrs: { id: "c1" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("c1")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.c1 }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                {
-                  attrs: { id: "c2" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("c2")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.c2 }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                {
-                  attrs: { id: "c3" },
-                  on: {
-                    click: function($event) {
-                      _vm.tdClick("c3")
-                    }
-                  }
-                },
-                [
-                  _c("input", {
-                    staticClass: "text-center",
-                    attrs: { type: "text", readonly: "" },
-                    domProps: { value: _vm.table.c3 }
-                  })
-                ]
-              )
-            ])
-          ])
-        ])
+      _c("div", { staticClass: "col-sm-4" }, [
+        _c("img", {
+          staticClass: "hangman border",
+          attrs: { src: _vm.image, alt: "image" }
+        }),
+        _vm._v(" "),
+        _c("br"),
+        _c("br")
       ]),
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass:
-            "col-sm-2 order-sm-1 text-success font-weight-bold text-center pt-5"
-        },
+        { staticClass: "col-sm-8" },
         [
-          _c("i", { staticClass: "fa fa-user" }),
-          _c("br"),
-          _vm._v("\n            " + _vm._s(_vm.player.name1) + " "),
           _c("br"),
           _vm._v(" "),
-          _c("b", { staticStyle: { "font-size": "30px", color: "yellow" } }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm.player.score1) +
-                "\n            "
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "col-sm-2 order-sm-3 text-success font-weight-bold text-center pt-5"
-        },
-        [
-          _c("i", { staticClass: "fa fa-user" }),
-          _c("br"),
-          _vm._v("\n            " + _vm._s(_vm.player.name2) + " "),
-          _c("br"),
+          _c("h5", { staticClass: "alert alert-warning" }, [
+            _vm._v(_vm._s(_vm.hangman.hint))
+          ]),
           _vm._v(" "),
-          _c("b", { staticStyle: { "font-size": "30px", color: "yellow" } }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm.player.score2) +
-                "\n            "
-            )
-          ])
-        ]
+          _c("hr"),
+          _vm._v(" "),
+          _vm._l(_vm.wordArray, function(letter) {
+            return _c("div", { staticStyle: { display: "inline" } }, [
+              _vm.checkSpace(letter)
+                ? _c("i", { staticClass: "hang-letter" }, [_vm._v("  ")])
+                : _vm.checkWords(letter)
+                  ? _c("i", { staticClass: "hang-letter" }, [
+                      _vm._v(_vm._s(letter))
+                    ])
+                  : _c("i", { staticClass: "hang-letter" }, [_vm._v(" _ ")])
+            ])
+          }),
+          _vm._v(" "),
+          _c("hr")
+        ],
+        2
       )
     ]),
     _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-3" }),
-      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-sm-6" },
+        { staticClass: "col-sm-3" },
         [
           _c(
-            "button",
-            {
-              staticClass: "btn btn-danger mr-5",
-              on: {
-                click: function($event) {
-                  _vm.reloadpage()
-                }
-              }
-            },
-            [_vm._v("Reset Score !")]
-          ),
-          _vm._v(" "),
-          _c(
             "router-link",
-            { staticClass: "btn btn-secondary", attrs: { to: "/" } },
-            [_vm._v("Back")]
+            { staticClass: "btn btn-danger", attrs: { to: "/" } },
+            [_vm._v("New "), _c("br"), _vm._v("Game !")]
           )
         ],
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-3" })
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticStyle: { display: "none" }, attrs: { id: "winMessageBlock" } },
-      [
-        _c("b", { staticClass: "text-danger" }, [
-          _c("i", { staticClass: "fa fa-gift fa-2x text-primary" }),
+      _c("div", { staticClass: "col-sm-9 text-center" }, [
+        _c("table", [
+          _c(
+            "tr",
+            _vm._l(_vm.letterArray1, function(item) {
+              return _c("td", [
+                _c(
+                  "i",
+                  {
+                    staticClass: "hang-answer btn btn-xs btn-info",
+                    attrs: { id: item },
+                    on: {
+                      click: function($event) {
+                        _vm.populateAnswer(item)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(item))]
+                )
+              ])
+            })
+          ),
           _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", id: "winMessage", readonly: "" }
-          })
+          _c(
+            "tr",
+            _vm._l(_vm.letterArray2, function(item) {
+              return _c("td", [
+                _c(
+                  "i",
+                  {
+                    staticClass: "hang-answer btn btn-xs btn-info",
+                    attrs: { id: item },
+                    on: {
+                      click: function($event) {
+                        _vm.populateAnswer(item)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(item))]
+                )
+              ])
+            })
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            _vm._l(_vm.letterArray3, function(item) {
+              return _c("td", [
+                _c(
+                  "i",
+                  {
+                    staticClass: "hang-answer btn btn-xs btn-info",
+                    attrs: { id: item },
+                    on: {
+                      click: function($event) {
+                        _vm.populateAnswer(item)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(item))]
+                )
+              ])
+            })
+          )
         ]),
         _vm._v(" "),
         _c("br")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("b", { staticClass: "text-danger" }, [
-      _c("i", {
-        staticClass: "fa fa-gamepad lead text-info",
-        staticStyle: { "font-size": "20px" }
-      }),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "text", id: "message", readonly: "" } })
+      ])
     ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-162bc6b4", module.exports)
-  }
-}
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(56)
-}
-var normalizeComponent = __webpack_require__(4)
-/* script */
-var __vue_script__ = __webpack_require__(58)
-/* template */
-var __vue_template__ = __webpack_require__(59)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/TTTComponent/TTTscore.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-be891b7c", Component.options)
-  } else {
-    hotAPI.reload("data-v-be891b7c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(57);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("46c48217", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-be891b7c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TTTscore.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-be891b7c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TTTscore.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 58 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {};
-    },
-
-    methods: {}
-});
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h1", [_vm._v("score")]),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        { staticClass: "btn btn-secondary float-right", attrs: { to: "/" } },
-        [_vm._v("Back")]
-      )
-    ],
-    1
-  )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -15719,7 +15407,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-be891b7c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-45294398", module.exports)
   }
 }
 

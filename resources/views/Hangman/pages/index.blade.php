@@ -1,7 +1,7 @@
 {{--include css and js here--}}
 @section('css')
     <style>
-        .bg-ttt {
+        .bg-hangman {
             min-height: 520px;
             background: rgba(250, 50, 150, 0.2);
         }
@@ -10,25 +10,23 @@
 
 @section('js')
     <script>
-        var serverPlayer = {
-            name1: 'Player O',
-            score1: 0,
-            name2: 'Player X',
-            score2: 0
-        };
+        var server = {
+            word: '',
+            hint: 'No hint! hehehe',
+            chance: 5,
+        }
     </script>
-    <script src="{{url('js/TTT.js')}}"></script>
+    <script src="{{url('js/Hangman.js')}}"></script>
 @endsection
 
 
 @include('includes.header')
 
-<div class="row" id="TTT" style="min-height: 350px;">
+<div class="row" id="Hangman" style="min-height: 350px;">
     <div class="col-md-8 order-md-2 text-center">
-        <router-view class="bg-ttt">
+        <router-view class="bg-hangman">
 
         </router-view>
-        {{--<img src="{{url('images/game/dummy.jpg')}}" alt="image" width="100%">--}}
     </div>
     <div class="col-md-2 order-md-1 text-center">
         <h1>1</h1>
