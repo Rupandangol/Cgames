@@ -3,9 +3,8 @@
 <head>
     <title>Admin Area</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" media="screen" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url('css/app.css')}}">
+
 </head>
 <body>
 @include('admin.layout.includes.header')
@@ -17,10 +16,9 @@
     @endif
 
     <div class="row">
-        @include('admin.layout.includes.sidenav')
-        <div class="col-md-10 display-area">
+        <div class="col-md-12 display-area">
             <div class="row text-center">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12 col-md-offset-1">
                     <div class="content-box-large">
                         @yield('content')
                     </div>
@@ -31,8 +29,7 @@
 
 </div><!--/Page Content-->
 
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="{{url('js/app.js')}}"></script>
 <script>
     $(document).ready(function () {
         $(".submenu > a").click(function (e) {

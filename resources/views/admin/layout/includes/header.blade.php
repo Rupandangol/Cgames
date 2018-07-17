@@ -1,29 +1,24 @@
-<div class="header" style="background: #2B3742">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <!-- Logo -->
-                <div class="logo">
-                    <h1><a href="{{route('admin.index')}}"><i class="fa fa-gamepad"> </i>  Admin</a></h1>
-                </div>
-            </div>
 
-            <div class="col-md-2 pull-right">
-                <div class="navbar navbar-inverse" role="banner">
-                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a href="{{url('/')}}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-dropbox"></i> {{Auth::user()->name}}<b
-                                            class="caret"></b></a>
-                                <ul class="dropdown-menu animated fadeInUp">
-                                    <li><a href="{{url('/')}}">Front End</a></li>
-                                    <li><a href="{{url('/logout')}}">Logout</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{route('admin.index')}}"><i class="fa fa-gamepad"> </i> Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{url('/')}}">Front End</a>
+                    <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
                 </div>
-            </div>
-        </div>
+        </ul>
     </div>
-</div>
+</nav>
